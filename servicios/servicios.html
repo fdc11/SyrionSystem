@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios — Syrion Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="servicios.css">
+</head>
+<body>
+
+    <!-- ══════════════════════════════════════
+         LOADER
+    ══════════════════════════════════════ -->
+    <div id="loader">
+        <div class="loader-logo">SYRION</div>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         NAV
+    ══════════════════════════════════════ -->
+    <header id="navbar">
+        <nav class="nav-inner">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-mark">S</span>
+                <span class="logo-text">YRION</span>
+                <span class="logo-systems">SYSTEMS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="../portafolio/portafolio.html" class="nav-link">Portafolio</a></li>
+                <li><a href="../contacto/contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+            <a href="../contacto/contacto.html" class="nav-cta">Hablar con un experto</a>
+            <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+        <div class="nav-mobile-menu" id="mobileMenu">
+            <a href="../index.html" class="mobile-link">Inicio</a>
+            <a href="servicios.html" class="mobile-link">Servicios</a>
+            <a href="../portafolio/portafolio.html" class="mobile-link">Portafolio</a>
+            <a href="../contacto/contacto.html" class="mobile-link">Contacto</a>
+            <a href="../contacto/contacto.html" class="mobile-cta">Hablar con un experto</a>
+        </div>
+    </header>
+
+    <!-- ══════════════════════════════════════
+         HERO INFORMATIVO (SUBPÁGINA)
+    ══════════════════════════════════════ -->
+    <section id="hero" style="min-height: 50vh; padding: 10rem 2rem 4rem;">
+        <div class="hero-bg">
+            <div class="hero-grid"></div>
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-particles" id="particles"></div>
+        </div>
+        <div class="hero-content page-header" style="opacity: 0; transform: translateY(20px);">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Portafolio de Soluciones Digitales
+            </div>
+            <h1 class="hero-headline" style="font-size: clamp(2.5rem, 5vw, 4.5rem);">
+                Nuestros <span class="hero-accent">Servicios</span>
+            </h1>
+            <p class="hero-sub" style="opacity: 1; margin-bottom: 0;">
+                Diseño, desarrollo e integración de software empresarial de alto rendimiento. Soluciones a la medida para optimizar cada proceso de su organización.
+            </p>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         DETALLE DE SERVICIOS
+    ══════════════════════════════════════ -->
+    <section class="section" style="padding-top: 2rem;">
+        <div class="container">
+            <div class="services-grid">
+                
+                <!-- Servicio 1: Núcleo Empresarial -->
+                <article class="service-card reveal" data-delay="0">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Núcleo Empresarial (ERP/BPM)</h3>
+                    <p class="card-desc">Sistemas robustos de planificación de recursos empresariales. Centralice su administración, controle flujos financieros e integre áreas operativas en tiempo real.</p>
+                    <div class="card-tags">
+                        <span>ERP</span><span>Facturación Electrónica</span><span>Finanzas</span><span>BPM</span>
+                    </div>
+                    <ul style="color: var(--white-50); font-size: 0.85rem; margin-bottom: 1.5rem; list-style: disc; padding-left: 1.2rem; font-weight: 300; line-height: 1.6;">
+                        <li>Gestión contable y financiera multimoneda.</li>
+                        <li>Automatización de flujos de aprobación (BPM).</li>
+                        <li>Control de activos fijos e inventarios críticos.</li>
+                    </ul>
+                    <a href="../contacto/contacto.html" class="card-link">Solicitar demo <span>→</span></a>
+                </article>
+
+                <!-- Servicio 2: CRM & Gestión Documental -->
+                <article class="service-card reveal" data-delay="100">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Clientes & Mercado (CRM/ECM)</h3>
+                    <p class="card-desc">Herramientas avanzadas para optimizar el ciclo comercial. Gestione oportunidades de venta, automatice marketing y digitalice sus archivos con ECM.</p>
+                    <div class="card-tags">
+                        <span>CRM</span><span>Fidelización</span><span>Documentos</span><span>Leads</span>
+                    </div>
+                    <ul style="color: var(--white-50); font-size: 0.85rem; margin-bottom: 1.5rem; list-style: disc; padding-left: 1.2rem; font-weight: 300; line-height: 1.6;">
+                        <li>Seguimiento de embudo comercial y cuotas de venta.</li>
+                        <li>Gestión documental estructurada y firmas digitales.</li>
+                        <li>Historial omnicanal de interacciones con clientes.</li>
+                    </ul>
+                    <a href="../contacto/contacto.html" class="card-link">Solicitar demo <span>→</span></a>
+                </article>
+
+                <!-- Servicio 3: Cadena de Suministro -->
+                <article class="service-card reveal" data-delay="200">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/>
+                            <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Logística & Cadena de Suministro</h3>
+                    <p class="card-desc">Sistemas WMS y TMS diseñados para empresas importadoras, exportadoras y operadores logísticos que buscan máxima eficiencia y trazabilidad.</p>
+                    <div class="card-tags">
+                        <span>SCM</span><span>WMS</span><span>TMS</span><span>Ecologística</span>
+                    </div>
+                    <ul style="color: var(--white-50); font-size: 0.85rem; margin-bottom: 1.5rem; list-style: disc; padding-left: 1.2rem; font-weight: 300; line-height: 1.6;">
+                        <li>Optimización de almacenamiento dinámico (WMS).</li>
+                        <li>Planificación de rutas de transporte e indicador de CO2.</li>
+                        <li>Control aduanero e hitos de importación/exportación.</li>
+                    </ul>
+                    <a href="../contacto/contacto.html" class="card-link">Solicitar demo <span>→</span></a>
+                </article>
+
+                <!-- Servicio 4: Inteligencia de Negocio -->
+                <article class="service-card reveal card-featured" data-delay="0">
+                    <div class="card-featured-label">Popular</div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Business Intelligence & RPA</h3>
+                    <p class="card-desc">Tome decisiones estratégicas basadas en datos reales. Conectamos múltiples bases de datos con tableros interactivos e implementamos bots de automatización.</p>
+                    <div class="card-tags">
+                        <span>Power BI</span><span>Python</span><span>Data Mining</span><span>RPA</span>
+                    </div>
+                    <ul style="color: var(--white-50); font-size: 0.85rem; margin-bottom: 1.5rem; list-style: disc; padding-left: 1.2rem; font-weight: 300; line-height: 1.6;">
+                        <li>Cuadros de mando actualizados automáticamente.</li>
+                        <li>Integración de datos maestros de múltiples orígenes.</li>
+                        <li>Robotic Process Automation para tareas administrativas repetitivas.</li>
+                    </ul>
+                    <a href="../contacto/contacto.html" class="card-link">Solicitar demo <span>→</span></a>
+                </article>
+
+                <!-- Servicio 5: IA & Machine Learning -->
+                <article class="service-card reveal" data-delay="100">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Inteligencia Artificial</h3>
+                    <p class="card-desc">Integramos modelos predictivos avanzados en su operación. Reduzca mermas, anticipe la demanda de stock y automatice mediante visión computacional.</p>
+                    <div class="card-tags">
+                        <span>Computer Vision</span><span>Clustering</span><span>Predicciones</span>
+                    </div>
+                    <ul style="color: var(--white-50); font-size: 0.85rem; margin-bottom: 1.5rem; list-style: disc; padding-left: 1.2rem; font-weight: 300; line-height: 1.6;">
+                        <li>Predicción de demanda y rotura de stock.</li>
+                        <li>Detección automática de objetos en almacenes (CCTV).</li>
+                        <li>Segmentación inteligente de carteras de clientes.</li>
+                    </ul>
+                    <a href="../contacto/contacto.html" class="card-link">Solicitar demo <span>→</span></a>
+                </article>
+
+                <!-- Servicio 6: Apps & Portales Web -->
+                <article class="service-card reveal" data-delay="200">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Desarrollo Web & Mobile</h3>
+                    <p class="card-desc">Sistemas que no se adaptan a plantillas. Desarrollamos herramientas específicas de principio a fin, garantizando escalabilidad y alta disponibilidad.</p>
+                    <div class="card-tags">
+                        <span>Next.js</span><span>Node.js</span><span>React Native</span><span>API Rest</span>
+                    </div>
+                    <ul style="color: var(--white-50); font-size: 0.85rem; margin-bottom: 1.5rem; list-style: disc; padding-left: 1.2rem; font-weight: 300; line-height: 1.6;">
+                        <li>Aplicaciones móviles multiplataforma (iOS y Android).</li>
+                        <li>Plataformas y portales web orientados a clientes/proveedores.</li>
+                        <li>Arquitecturas de bases de datos seguras y optimizadas.</li>
+                    </ul>
+                    <a href="../contacto/contacto.html" class="card-link">Solicitar demo <span>→</span></a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CTA BAND
+    ══════════════════════════════════════ -->
+    <section class="cta-band reveal">
+        <div class="cta-band-bg"></div>
+        <div class="container cta-band-inner">
+            <div class="cta-text">
+                <h2>¿Necesita una solución personalizada?</h2>
+                <p>Escríbanos hoy y un arquitecto de soluciones se pondrá en contacto en menos de 24 horas.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="../contacto/contacto.html" class="btn-primary btn-light">Agendar consulta gratuita <span class="btn-arrow">→</span></a>
+                <a href="mailto:syrionsistemsms@gmail.com" class="btn-ghost-light">syrionsistemsms@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════ -->
+    <footer id="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-mark">S</span>
+                    <span class="logo-text">YRION</span>
+                    <span class="logo-systems">SYSTEMS</span>
+                </a>
+                <p class="footer-slogan">Software que evoluciona contigo.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4>Soluciones</h4>
+                <a href="servicios.html">Núcleo Empresarial</a>
+                <a href="servicios.html">Mercado & Clientes</a>
+                <a href="servicios.html">Logística</a>
+                <a href="servicios.html">Business Intelligence</a>
+                <a href="servicios.html">IA & Machine Learning</a>
+            </div>
+            <div class="footer-links-col">
+                <h4>Empresa</h4>
+                <a href="../index.html#nosotros">Nosotros</a>
+                <a href="../index.html#tecnologias">Tecnologías</a>
+                <a href="../contacto/contacto.html">Contacto</a>
+            </div>
+            <div class="footer-links-col">
+                <h4>Contacto</h4>
+                <a href="mailto:syrionsistemsms@gmail.com">syrionsistemsms@gmail.com</a>
+                <a href="#">@SyrionSistems</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Syrion Systems. Todos los derechos reservados.</p>
+            <p>Perú</p>
+        </div>
+    </footer>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="servicios.js"></script>
+</body>
+</html>

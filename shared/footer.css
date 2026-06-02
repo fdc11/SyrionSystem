@@ -1,0 +1,9 @@
+/* Estructura base del footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}

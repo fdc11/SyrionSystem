@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio — Syrion Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="portafolio.css">
+</head>
+<body>
+
+    <!-- ══════════════════════════════════════
+         LOADER
+    ══════════════════════════════════════ -->
+    <div id="loader">
+        <div class="loader-logo">SYRION</div>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         NAV
+    ══════════════════════════════════════ -->
+    <header id="navbar">
+        <nav class="nav-inner">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-mark">S</span>
+                <span class="logo-text">YRION</span>
+                <span class="logo-systems">SYSTEMS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                <li><a href="../servicios/servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="portafolio.html" class="nav-link">Portafolio</a></li>
+                <li><a href="../contacto/contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+            <a href="../contacto/contacto.html" class="nav-cta">Hablar con un experto</a>
+            <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+        <div class="nav-mobile-menu" id="mobileMenu">
+            <a href="../index.html" class="mobile-link">Inicio</a>
+            <a href="../servicios/servicios.html" class="mobile-link">Servicios</a>
+            <a href="portafolio.html" class="mobile-link">Portafolio</a>
+            <a href="../contacto/contacto.html" class="mobile-link">Contacto</a>
+            <a href="../contacto/contacto.html" class="mobile-cta">Hablar con un experto</a>
+        </div>
+    </header>
+
+    <!-- ══════════════════════════════════════
+         HERO INFORMATIVO (SUBPÁGINA)
+    ══════════════════════════════════════ -->
+    <section id="hero" style="min-height: 50vh; padding: 10rem 2rem 4rem;">
+        <div class="hero-bg">
+            <div class="hero-grid"></div>
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-particles" id="particles"></div>
+        </div>
+        <div class="hero-content page-header" style="opacity: 0; transform: translateY(20px);">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Casos de Éxito & Implementaciones
+            </div>
+            <h1 class="hero-headline" style="font-size: clamp(2.5rem, 5vw, 4.5rem);">
+                Nuestro <span class="hero-accent">Portafolio</span>
+            </h1>
+            <p class="hero-sub" style="opacity: 1; margin-bottom: 0;">
+                Conozca algunos de los sistemas implementados para empresas del sector exportación, importación y ecologística en Perú y Latinoamérica.
+            </p>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         PROYECTOS / PORTAFOLIO
+    ══════════════════════════════════════ -->
+    <section class="section" style="padding-top: 2rem;">
+        <div class="container">
+            <div class="services-grid">
+                
+                <!-- Proyecto 1: ERP Agrícola -->
+                <article class="service-card project-card reveal" data-delay="0">
+                    <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.8rem; color: var(--blue-soft); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">
+                        Caso de Éxito · Agroexportación
+                    </div>
+                    <h3 class="card-title">ERP & BPM Agrícola Multiplanta</h3>
+                    <p class="card-desc">Diseño e integración de un sistema centralizado para el control de producción, acopio, packing e internacionalización para una de las exportadoras líderes de palta y mango en el norte de Perú.</p>
+                    <div class="card-tags">
+                        <span>ERP</span><span>BPM</span><span>SQL Server</span><span>Multiplanta</span>
+                    </div>
+                    <div style="color: var(--white-80); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1rem; font-weight: 300;">
+                        <strong>Impacto:</strong> Centralización de 3 plantas procesadoras, reducción del 18% en tiempos muertos de producción y trazabilidad completa del lote desde campo hasta puerto de destino.
+                    </div>
+                </article>
+
+                <!-- Proyecto 2: BI Logística -->
+                <article class="service-card project-card reveal" data-delay="100">
+                    <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.8rem; color: var(--blue-soft); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">
+                        Caso de Éxito · Operador Logístico
+                    </div>
+                    <h3 class="card-title">Dashboard BI y Control de Huella Ecológica</h3>
+                    <p class="card-desc">Plataforma de inteligencia de negocio integrada con TMS que permite la visualización en tiempo real del estado de despachos, control de inventario dinámico e indicadores de emisiones de CO2.</p>
+                    <div class="card-tags">
+                        <span>Power BI</span><span>Python</span><span>TMS</span><span>Ecologística</span>
+                    </div>
+                    <div style="color: var(--white-80); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1rem; font-weight: 300;">
+                        <strong>Impacto:</strong> Ahorro del 12% en consumo de combustible gracias a la consolidación inteligente de carga y toma de decisiones comerciales 5 veces más rápida por parte de gerencia.
+                    </div>
+                </article>
+
+                <!-- Proyecto 3: Visión Computacional -->
+                <article class="service-card project-card reveal" data-delay="200">
+                    <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.8rem; color: var(--blue-soft); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">
+                        Caso de Éxito · Retail & Almacenes
+                    </div>
+                    <h3 class="card-title">Sistema de Visión Artificial para Packing</h3>
+                    <p class="card-desc">Desarrollo de un software inteligente montado sobre cámaras IP de alta resolución que detecta y cuenta automáticamente unidades de embalaje, alertando sobre discrepancias en tiempo real.</p>
+                    <div class="card-tags">
+                        <span>YOLOv8</span><span>Python</span><span>OpenCV</span><span>Inteligencia Artificial</span>
+                    </div>
+                    <div style="color: var(--white-80); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1rem; font-weight: 300;">
+                        <strong>Impacto:</strong> Automatización del proceso de check-out, logrando una precisión del 99.8% en despacho y eliminando multas por entregas incompletas a clientes finales.
+                    </div>
+                </article>
+
+                <!-- Proyecto 4: Portal Web y App -->
+                <article class="service-card project-card reveal" data-delay="0">
+                    <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.8rem; color: var(--blue-soft); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">
+                        Caso de Éxito · Importación
+                    </div>
+                    <h3 class="card-title">Portal de Autogestión de Clientes Logísticos</h3>
+                    <p class="card-desc">Aplicación web y móvil en la cual los clientes de una importadora pueden revisar stock disponible, cotizar pedidos de forma automática, realizar pagos digitales y programar despachos.</p>
+                    <div class="card-tags">
+                        <span>React</span><span>Firebase</span><span>API Rest</span><span>UI/UX Premium</span>
+                    </div>
+                    <div style="color: var(--white-80); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1rem; font-weight: 300;">
+                        <strong>Impacto:</strong> Migración del 45% de solicitudes telefónicas/correo a la plataforma digital, incrementando la satisfacción del cliente e impulsando ventas recurrentes fuera de horario de oficina.
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CTA BAND
+    ══════════════════════════════════════ -->
+    <section class="cta-band reveal">
+        <div class="cta-band-bg"></div>
+        <div class="container cta-band-inner">
+            <div class="cta-text">
+                <h2>¿Quiere automatizar su empresa?</h2>
+                <p>Permítanos diseñar una arquitectura técnica acorde a sus necesidades y presupuesto.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="../contacto/contacto.html" class="btn-primary btn-light">Agendar consulta gratuita <span class="btn-arrow">→</span></a>
+                <a href="mailto:syrionsistemsms@gmail.com" class="btn-ghost-light">syrionsistemsms@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════ -->
+    <footer id="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="nav-logo">
+                    <span class="logo-mark">S</span>
+                    <span class="logo-text">YRION</span>
+                    <span class="logo-systems">SYSTEMS</span>
+                </a>
+                <p class="footer-slogan">Software que evoluciona contigo.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4>Soluciones</h4>
+                <a href="../servicios/servicios.html">Núcleo Empresarial</a>
+                <a href="../servicios/servicios.html">Mercado & Clientes</a>
+                <a href="../servicios/servicios.html">Logística</a>
+                <a href="../servicios/servicios.html">Business Intelligence</a>
+                <a href="../servicios/servicios.html">IA & Machine Learning</a>
+            </div>
+            <div class="footer-links-col">
+                <h4>Empresa</h4>
+                <a href="../index.html#nosotros">Nosotros</a>
+                <a href="../index.html#tecnologias">Tecnologías</a>
+                <a href="../contacto/contacto.html">Contacto</a>
+            </div>
+            <div class="footer-links-col">
+                <h4>Contacto</h4>
+                <a href="mailto:syrionsistemsms@gmail.com">syrionsistemsms@gmail.com</a>
+                <a href="#">@SyrionSistems</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Syrion Systems. Todos los derechos reservados.</p>
+            <p>Perú</p>
+        </div>
+    </footer>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="portafolio.js"></script>
+</body>
+</html>
