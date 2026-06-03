@@ -11,6 +11,57 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
     // ──────────────────────────────────
+    // HERO VIDEO — forzar reproducción en todos los dispositivos
+    // ──────────────────────────────────
+    (function forceHeroVideo() {
+        const video = document.getElementById('heroBgVideo');
+        if (!video) return;
+
+        // Función principal: silenciar + reproducir
+        function tryPlay() {
+            video.muted = true;           // obligatorio en Safari/iOS
+            video.volume = 0;
+            const p = video.play();
+            if (p && typeof p.catch === 'function') {
+                p.catch(() => {
+                    // Si el autoplay fue bloqueado, esperamos
+                    // la primera interacción del usuario y reintentamos
+                    schedulePlayOnInteraction();
+                });
+            }
+        }
+
+        // Reintenta con cualquier gesto del usuario
+        function schedulePlayOnInteraction() {
+            const events = ['touchstart', 'touchend', 'click', 'scroll', 'keydown', 'pointerdown'];
+            function onInteraction() {
+                video.muted = true;
+                video.volume = 0;
+                video.play().catch(() => {});
+                events.forEach(ev => document.removeEventListener(ev, onInteraction, { passive: true }));
+            }
+            events.forEach(ev => document.addEventListener(ev, onInteraction, { once: true, passive: true }));
+        }
+
+        // Reanudar si el usuario vuelve a la pestaña o desbloquea la pantalla
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && video.paused) tryPlay();
+        });
+
+        // Reanudar si la app se activa (móvil)
+        window.addEventListener('focus', () => {
+            if (video.paused) tryPlay();
+        });
+
+        // Watchdog: si el video lleva 500 ms parado después de que debería haber cargado, reintentar
+        video.addEventListener('canplay', () => tryPlay());
+        video.addEventListener('loadedmetadata', () => tryPlay());
+
+        // Primer intento inmediato
+        tryPlay();
+    })();
+
+    // ──────────────────────────────────
     // LOADER
     // ──────────────────────────────────
     const loader = document.getElementById('loader');
