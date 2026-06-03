@@ -1,17 +1,236 @@
-/* Estructura base del navbar */
-nav {
+/* ══════════════════════════════════════
+   PREMIUM GLASSMORPHISM NAVBAR SYSTEM
+   ══════════════════════════════════════ */
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 120rem;        /* matches .site-wrapper */
+    z-index: 100;
+    padding: 0;
+    transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    border-bottom: 1px solid transparent;
+}
+
+/* 5. Transición de scroll más pronunciada con borde azul sutil */
+#navbar.scrolled {
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(23, 61, 237, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.nav-inner {
+    width: 100%;
+    max-width: 75rem;
+    margin-inline: auto;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    justify-content: space-between;
+    gap: clamp(0.75rem, 3vw, 3rem);
+    min-width: 0;
 }
 
-nav ul {
+.nav-logo {
     display: flex;
-    list-style: none;
-    gap: 2rem;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+    min-width: 0;
+    transition: transform var(--transition);
 }
 
-nav a {
-    text-decoration: none;
+.nav-logo:hover {
+    transform: scale(1.02);
+}
+
+/* 4. Logo más grande en desktop y responsivo */
+.nav-logo-img {
+    height: clamp(1.75rem, 2.5vw, 2.75rem);
+    width: auto;
+    display: block;
+    filter: none;
+    object-fit: contain;
+}
+
+.logo-fallback {
+    display: none;
+    align-items: baseline;
+    gap: 0;
+}
+
+.logo-mark, .logo-text, .logo-systems { display: none; }
+
+.nav-links {
+    display: none;
+    gap: clamp(1rem, 2.5vw, 2.5rem);
+    margin-left: auto;
+    min-width: 0;
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    font-size: clamp(0.75rem, 0.6vw + 0.6rem, 0.875rem);
+    font-weight: 400;
+    color: var(--white-60);
+    letter-spacing: 0.01em;
+    transition: color var(--transition);
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 0; height: 1px;
+    background: var(--white);
+    transition: width var(--transition);
+}
+
+.nav-link:hover { color: var(--white); }
+.nav-link:hover::after { width: 100%; }
+
+/* 1. Link activo visible con línea azul permanente */
+.nav-link.active {
+    color: var(--white);
+    font-weight: 500;
+}
+
+.nav-link.active::after {
+    width: 100%;
+    background: var(--blue-accent);
+    box-shadow: 0 0 8px var(--blue-glow);
+}
+
+/* 2. El nav-cta necesita más peso (fondo dim y borde accent por defecto) */
+.nav-cta {
+    display: none;
+    font-family: var(--font-body);
+    font-size: clamp(0.75rem, 0.6vw + 0.6rem, 0.875rem);
+    font-weight: 500;
+    color: var(--white);
+    background: var(--blue-dim);
+    border: 1px solid var(--blue-accent);
+    padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.8rem, 2vw, 1.1rem);
+    border-radius: 6px;
+    transition: color var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
+    flex-shrink: 0;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+}
+
+.nav-cta:hover {
+    color: var(--white);
+    border-color: var(--blue-glow);
+    background: var(--blue-accent);
+    box-shadow: 0 4px 15px rgba(23, 61, 237, 0.35);
+}
+
+/* 2. Contacto activo (si es la página actual) */
+.nav-cta.active {
+    background: var(--blue-accent);
+    border-color: var(--blue-glow);
+    box-shadow: 0 0 10px rgba(23, 61, 237, 0.4);
+}
+
+.nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.nav-hamburger span {
+    width: 24px;
+    height: 1.5px;
+    background: var(--white);
+    display: block;
+    transition: var(--transition);
+}
+
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px)  rotate(45deg);  }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.nav-mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(0,0,0,0.97);
+    backdrop-filter: blur(24px);
+    padding: 1.5rem clamp(1rem, 5vw, 2rem) 2rem;
+    border-top: 1px solid var(--border);
+    gap: 0;
+}
+
+.nav-mobile-menu.open { display: flex; }
+
+.mobile-link {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.1rem);
+    color: var(--white-80);
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: color var(--transition);
+}
+
+.mobile-link:hover { color: var(--white); }
+
+/* 1. Mobile active link styling */
+.mobile-link.active {
+    color: var(--white);
+    font-weight: 600;
+    border-bottom-color: var(--blue-accent);
+}
+
+.mobile-cta {
+    margin-top: 1.5rem;
+    display: inline-block;
+    background: var(--blue-accent);
+    color: var(--white);
+    padding: clamp(0.7rem, 2vw, 0.9rem) clamp(1rem, 4vw, 1.5rem);
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    font-size: var(--text-base);
+}
+
+.mobile-cta.active {
+    background: var(--blue-glow);
+    box-shadow: 0 0 10px rgba(23, 61, 237, 0.4);
+}
+
+/* Responsive Tablet/Desktop rules */
+@media (min-width: 768px) {
+    .nav-links { display: flex; }
+    
+    /* 3. Separador sutil entre links y CTA */
+    .nav-cta { 
+        display: block; 
+        margin-left: 1.5rem;
+        position: relative;
+    }
+    
+    .nav-cta::before {
+        content: '';
+        position: absolute;
+        left: -0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 16px;
+        background: var(--border);
+    }
+    
+    .nav-hamburger { display: none; }
 }
