@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios — Syrion Systems</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="servicios.css">
 </head>
+
 <body>
 
     <!-- ══════════════════════════════════════
@@ -16,57 +18,54 @@
     ══════════════════════════════════════ -->
     <div id="loader">
         <img class="loader-logo" src="../inicio/Imagenes/LogoTransparanete.png" alt="Syrion Systems">
-        <div class="loader-bar"><div class="loader-fill"></div></div>
+        <div class="loader-bar">
+            <div class="loader-fill"></div>
+        </div>
     </div>
+
+    <div class="site-wrapper">
 
     <!-- ══════════════════════════════════════
          NAV
     ══════════════════════════════════════ -->
     <header id="navbar">
         <nav class="nav-inner">
-            <a href="../index.html" class="nav-logo">
-                <span class="logo-mark">S</span>
-                <span class="logo-text">YRION</span>
-                <span class="logo-systems">SYSTEMS</span>
+            <a href="../inicio/inicio.html" class="nav-logo">
+                <img src="../inicio/Imagenes/LogoTransparanete.png" alt="Syrion Systems" class="nav-logo-img"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="logo-fallback" style="display:none; align-items:baseline; gap:0;">
+                    <span style="font-family:Inter,sans-serif; font-weight:700; font-size:1.4rem; color:#fff; letter-spacing:-0.03em;">SYRION</span>
+                    <span style="font-family:Inter,sans-serif; font-size:0.55rem; color:rgba(255,255,255,0.4); letter-spacing:0.2em; margin-left:0.4rem; text-transform:uppercase; align-self:center;">SYSTEMS</span>
+                </span>
             </a>
             <ul class="nav-links">
-                <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                <li><a href="../inicio/inicio.html" class="nav-link">Inicio</a></li>
                 <li><a href="servicios.html" class="nav-link">Servicios</a></li>
                 <li><a href="../portafolio/portafolio.html" class="nav-link">Portafolio</a></li>
-                <li><a href="../contacto/contacto.html" class="nav-link">Contacto</a></li>
             </ul>
-            <a href="../contacto/contacto.html" class="nav-cta">Hablar con un experto</a>
+            <a href="../contacto/contacto.html" class="nav-cta">Contacto</a>
             <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú">
                 <span></span><span></span><span></span>
             </button>
         </nav>
         <div class="nav-mobile-menu" id="mobileMenu">
-            <a href="../index.html" class="mobile-link">Inicio</a>
+            <a href="../inicio/inicio.html" class="mobile-link">Inicio</a>
             <a href="servicios.html" class="mobile-link">Servicios</a>
             <a href="../portafolio/portafolio.html" class="mobile-link">Portafolio</a>
-            <a href="../contacto/contacto.html" class="mobile-link">Contacto</a>
-            <a href="../contacto/contacto.html" class="mobile-cta">Hablar con un experto</a>
+            <a href="../contacto/contacto.html" class="mobile-cta">Contacto</a>
         </div>
     </header>
 
     <!-- ══════════════════════════════════════
-         HERO INFORMATIVO (SUBPÁGINA)
+         HERO SUBPÁGINA
     ══════════════════════════════════════ -->
-    <section id="hero" style="min-height: 50vh; padding: 10rem 2rem 4rem;">
-        <div class="hero-bg">
-            <div class="hero-grid"></div>
-            <div class="hero-glow hero-glow-1"></div>
-            <div class="hero-particles" id="particles"></div>
-        </div>
+    <section id="hero">
         <div class="hero-content page-header" style="opacity: 0; transform: translateY(20px);">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                Portafolio de Soluciones Digitales
-            </div>
-            <h1 class="hero-headline" style="font-size: clamp(2.5rem, 5vw, 4.5rem);">
+            <span class="section-tag">Portafolio de Soluciones Digitales</span>
+            <h1 class="hero-headline">
                 Nuestros <span class="hero-accent">Servicios</span>
             </h1>
-            <p class="hero-sub" style="opacity: 1; margin-bottom: 0;">
+            <p class="hero-sub">
                 Diseño, desarrollo e integración de software empresarial de alto rendimiento. Soluciones a la medida para optimizar cada proceso de su organización.
             </p>
         </div>
@@ -78,7 +77,7 @@
     <section class="section" style="padding-top: 2rem;">
         <div class="container">
             <div class="services-grid">
-                
+
                 <!-- Servicio 1: Núcleo Empresarial -->
                 <article class="service-card reveal" data-delay="0">
                     <div class="card-icon">
@@ -91,7 +90,7 @@
                     <div class="card-tags">
                         <span>ERP</span><span>Facturación Electrónica</span><span>Finanzas</span><span>BPM</span>
                     </div>
-                    <ul style="color: var(--white-50); font-size: 0.85rem; margin-bottom: 1.5rem; list-style: disc; padding-left: 1.2rem; font-weight: 300; line-height: 1.6;">
+                    <ul class="card-list">
                         <li>Gestión contable y financiera multimoneda.</li>
                         <li>Automatización de flujos de aprobación (BPM).</li>
                         <li>Control de activos fijos e inventarios críticos.</li>
@@ -112,7 +111,7 @@
                     <div class="card-tags">
                         <span>CRM</span><span>Fidelización</span><span>Documentos</span><span>Leads</span>
                     </div>
-                    <ul style="color: var(--white-50); font-size: 0.85rem; margin-bottom: 1.5rem; list-style: disc; padding-left: 1.2rem; font-weight: 300; line-height: 1.6;">
+                    <ul class="card-list">
                         <li>Seguimiento de embudo comercial y cuotas de venta.</li>
                         <li>Gestión documental estructurada y firmas digitales.</li>
                         <li>Historial omnicanal de interacciones con clientes.</li>
@@ -133,7 +132,7 @@
                     <div class="card-tags">
                         <span>SCM</span><span>WMS</span><span>TMS</span><span>Ecologística</span>
                     </div>
-                    <ul style="color: var(--white-50); font-size: 0.85rem; margin-bottom: 1.5rem; list-style: disc; padding-left: 1.2rem; font-weight: 300; line-height: 1.6;">
+                    <ul class="card-list">
                         <li>Optimización de almacenamiento dinámico (WMS).</li>
                         <li>Planificación de rutas de transporte e indicador de CO2.</li>
                         <li>Control aduanero e hitos de importación/exportación.</li>
@@ -141,7 +140,7 @@
                     <a href="../contacto/contacto.html" class="card-link">Solicitar demo <span>→</span></a>
                 </article>
 
-                <!-- Servicio 4: Inteligencia de Negocio -->
+                <!-- Servicio 4: Inteligencia de Negocio — FEATURED -->
                 <article class="service-card reveal card-featured" data-delay="0">
                     <div class="card-featured-label">Popular</div>
                     <div class="card-icon">
@@ -154,7 +153,7 @@
                     <div class="card-tags">
                         <span>Power BI</span><span>Python</span><span>Data Mining</span><span>RPA</span>
                     </div>
-                    <ul style="color: var(--white-50); font-size: 0.85rem; margin-bottom: 1.5rem; list-style: disc; padding-left: 1.2rem; font-weight: 300; line-height: 1.6;">
+                    <ul class="card-list">
                         <li>Cuadros de mando actualizados automáticamente.</li>
                         <li>Integración de datos maestros de múltiples orígenes.</li>
                         <li>Robotic Process Automation para tareas administrativas repetitivas.</li>
@@ -175,7 +174,7 @@
                     <div class="card-tags">
                         <span>Computer Vision</span><span>Clustering</span><span>Predicciones</span>
                     </div>
-                    <ul style="color: var(--white-50); font-size: 0.85rem; margin-bottom: 1.5rem; list-style: disc; padding-left: 1.2rem; font-weight: 300; line-height: 1.6;">
+                    <ul class="card-list">
                         <li>Predicción de demanda y rotura de stock.</li>
                         <li>Detección automática de objetos en almacenes (CCTV).</li>
                         <li>Segmentación inteligente de carteras de clientes.</li>
@@ -183,7 +182,7 @@
                     <a href="../contacto/contacto.html" class="card-link">Solicitar demo <span>→</span></a>
                 </article>
 
-                <!-- Servicio 6: Apps & Portales Web -->
+                <!-- Servicio 6: Desarrollo Web & Mobile -->
                 <article class="service-card reveal" data-delay="200">
                     <div class="card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -195,7 +194,7 @@
                     <div class="card-tags">
                         <span>Next.js</span><span>Node.js</span><span>React Native</span><span>API Rest</span>
                     </div>
-                    <ul style="color: var(--white-50); font-size: 0.85rem; margin-bottom: 1.5rem; list-style: disc; padding-left: 1.2rem; font-weight: 300; line-height: 1.6;">
+                    <ul class="card-list">
                         <li>Aplicaciones móviles multiplataforma (iOS y Android).</li>
                         <li>Plataformas y portales web orientados a clientes/proveedores.</li>
                         <li>Arquitecturas de bases de datos seguras y optimizadas.</li>
@@ -230,10 +229,14 @@
     <footer id="footer">
         <div class="container footer-inner">
             <div class="footer-brand">
-                <a href="../index.html" class="nav-logo">
-                    <span class="logo-mark">S</span>
-                    <span class="logo-text">YRION</span>
-                    <span class="logo-systems">SYSTEMS</span>
+                <a href="../inicio/inicio.html" class="nav-logo">
+                    <img src="../inicio/Imagenes/LogoTransparanete.png" alt="Syrion Systems" class="nav-logo-img"
+                        style="height:28px;"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <span class="logo-fallback" style="display:none; align-items:baseline; gap:0;">
+                        <span style="font-family:Inter,sans-serif; font-weight:700; font-size:1.3rem; color:#fff; letter-spacing:-0.03em;">SYRION</span>
+                        <span style="font-family:Inter,sans-serif; font-size:0.5rem; color:rgba(255,255,255,0.4); letter-spacing:0.2em; margin-left:0.4rem; text-transform:uppercase; align-self:center;">SYSTEMS</span>
+                    </span>
                 </a>
                 <p class="footer-slogan">Software que evoluciona contigo.</p>
             </div>
@@ -247,8 +250,8 @@
             </div>
             <div class="footer-links-col">
                 <h4>Empresa</h4>
-                <a href="../index.html#nosotros">Nosotros</a>
-                <a href="../index.html#tecnologias">Tecnologías</a>
+                <a href="../inicio/inicio.html#nosotros">Nosotros</a>
+                <a href="../inicio/inicio.html#tecnologias">Tecnologías</a>
                 <a href="../contacto/contacto.html">Contacto</a>
             </div>
             <div class="footer-links-col">
@@ -262,6 +265,8 @@
             <p>Perú</p>
         </div>
     </footer>
+
+    </div>
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
