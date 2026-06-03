@@ -62,50 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ──────────────────────────────────
-    // PARTÍCULAS DE FONDO
-    // ──────────────────────────────────
-    const particlesContainer = document.getElementById('particles');
-
-    function createParticles() {
-        const count = window.innerWidth < 768 ? 15 : 30;
-        for (let i = 0; i < count; i++) {
-            const p = document.createElement('div');
-            p.className = 'particle';
-            const size = Math.random() * 2 + 1;
-            const left = Math.random() * 100;
-            const duration = Math.random() * 15 + 10;
-            const delay = Math.random() * 15;
-            const drift = (Math.random() - 0.5) * 100;
-
-            p.style.cssText = `
-                left: ${left}%;
-                width: ${size}px;
-                height: ${size}px;
-                animation-duration: ${duration}s;
-                animation-delay: ${delay}s;
-                --drift: ${drift}px;
-                opacity: 0;
-            `;
-            particlesContainer.appendChild(p);
-        }
-    }
-
-    createParticles();
+    // (Partículas eliminadas — hero usa video de fondo)
 
     // ──────────────────────────────────
     // HERO ANIMATIONS (post-loader)
     // ──────────────────────────────────
     function initHeroAnimations() {
-
-        // Badge
-        gsap.to('#heroBadge', {
-            opacity: 1,
-            y: 0,
-            duration: 0.7,
-            ease: 'power2.out',
-            delay: 0.1
-        });
 
         // Headline lines — stagger
         const lines = document.querySelectorAll('.hero-headline .line');
@@ -117,18 +79,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 0.9,
                 ease: 'power3.out',
                 stagger: 0.12,
-                delay: 0.3
+                delay: 0.2
             }
         );
 
-        // Subtítulo
-        gsap.to('#heroSub', {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: 'power2.out',
-            delay: 0.85
-        });
+        // Wrapper del typewriter
+        gsap.fromTo('.hero-sub-wrapper',
+            { opacity: 0, y: 12 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.7,
+                ease: 'power2.out',
+                delay: 0.75
+            }
+        );
 
         // Botones
         gsap.to('#heroActions', {
@@ -136,17 +101,20 @@ document.addEventListener('DOMContentLoaded', () => {
             y: 0,
             duration: 0.7,
             ease: 'power2.out',
-            delay: 1.1
+            delay: 1.0
         });
 
-        // Stats
-        gsap.to('#heroStats', {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: 'power2.out',
-            delay: 1.4
-        });
+        // Stats band
+        gsap.fromTo('.stats-band',
+            { opacity: 0, y: 20 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power2.out',
+                delay: 1.3
+            }
+        );
 
         // Scroll indicator
         gsap.to('#scrollIndicator', {
@@ -155,8 +123,70 @@ document.addEventListener('DOMContentLoaded', () => {
             delay: 2
         });
 
+        // Iniciar typewriter después de que aparezca el subtítulo
+        setTimeout(initTypewriter, 950);
+
         // Contador de números
-        setTimeout(animateCounters, 1500);
+        setTimeout(animateCounters, 1400);
+    }
+
+    // ──────────────────────────────────
+    // TYPEWRITER CON CURSOR GRUESO
+    // ──────────────────────────────────
+    function initTypewriter() {
+        const el = document.getElementById('heroTypewriter');
+        if (!el) return;
+
+        const phrases = [
+            'ERP empresarial',
+            'Business Intelligence',
+            'Machine Learning',
+            'automatización de procesos',
+            'soluciones a medida',
+        ];
+
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let pauseTimer = null;
+
+        const TYPING_SPEED   = 62;   // ms por caracter al escribir
+        const DELETING_SPEED = 38;   // ms por caracter al borrar
+        const PAUSE_AFTER    = 2200; // pausa al terminar de escribir
+        const PAUSE_BEFORE   = 350;  // pausa antes de empezar a borrar
+
+        function tick() {
+            const current = phrases[phraseIndex];
+
+            if (!isDeleting) {
+                // Escribiendo
+                el.textContent = current.slice(0, charIndex + 1);
+                charIndex++;
+
+                if (charIndex === current.length) {
+                    // Terminó de escribir — pausa larga
+                    isDeleting = true;
+                    pauseTimer = setTimeout(tick, PAUSE_AFTER);
+                    return;
+                }
+                pauseTimer = setTimeout(tick, TYPING_SPEED);
+            } else {
+                // Borrando
+                el.textContent = current.slice(0, charIndex - 1);
+                charIndex--;
+
+                if (charIndex === 0) {
+                    // Terminó de borrar — siguiente frase
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    pauseTimer = setTimeout(tick, PAUSE_BEFORE);
+                    return;
+                }
+                pauseTimer = setTimeout(tick, DELETING_SPEED);
+            }
+        }
+
+        tick();
     }
 
     // ──────────────────────────────────
