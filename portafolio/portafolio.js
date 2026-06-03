@@ -64,16 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ──────────────────────────────────
-    // PAGE SPECIFIC ANIMATIONS
+    // PAGE ANIMATIONS (post-loader)
     // ──────────────────────────────────
     function initPageAnimations() {
-        // Page title reveal
-        gsap.to('.page-header', {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: 'power2.out'
-        });
+        gsap.fromTo('.page-header',
+            { opacity: 0, y: 24 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.85,
+                ease: 'power3.out',
+                delay: 0.1
+            }
+        );
     }
 
     // ──────────────────────────────────
@@ -101,7 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Parallax on project cards
+    // ──────────────────────────────────
+    // PROJECT CARDS — parallax sutil
+    // ──────────────────────────────────
     if (window.innerWidth > 1024) {
         document.querySelectorAll('.project-card').forEach(card => {
             card.addEventListener('mousemove', (e) => {
@@ -127,5 +132,20 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ──────────────────────────────────
+    // SMOOTH SCROLL — backup
+    // ──────────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            const target = document.querySelector(href);
+            if (!target) return;
+            e.preventDefault();
+            const top = target.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top, behavior: 'smooth' });
+        });
+    });
 
 });
