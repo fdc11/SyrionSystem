@@ -3,8 +3,8 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/inicio/(.*)",
-      "destination": "/",
+      "source": "/",
+      "destination": "/inicio/inicio.html",
       "permanent": false
     }
   ]
